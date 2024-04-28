@@ -419,7 +419,14 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.20.2.tgz#9c907b21e30a52db959ba4f80bb01a0cc403d5cc"
   integrity sha512-N49X4lJX27+l9jbLKSqZ6bKNjzQvHaT8IIFUy+YIqmXQdjYCToGWwOItDrfby14c78aDd5NHQl29xingXfCdLQ==
 
-"@iconify/types@^2.0.0":
+"@iconify-json/skill-icons@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@iconify-json/skill-icons/-/skill-icons-1.1.8.tgz#82c036c29688dc2b57deec4a5f6504e5ddce0248"
+  integrity sha512-pzgiS7bVDyyff9HNXQkkwZSaSc36TVQYhXMr6tBu/XmAreXdj4xdkTRpPcnwtHlhHwsI4NDCe/l3QiWavqsbkw==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/types@*", "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
   integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
