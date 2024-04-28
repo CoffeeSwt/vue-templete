@@ -1,4 +1,5 @@
 // uno.config.ts
+// for detail https://unocss.dev/guide/config-file
 import {
   defineConfig,
   presetAttributify,
