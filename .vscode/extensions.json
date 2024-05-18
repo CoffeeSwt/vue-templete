@@ -1,7 +1,6 @@
 {
     "recommendations": [
-        "vue.volar",
-        "antfu.unocss",
-        "ms-vscode.vscode-typescript-next"
+        "ms-vscode.vscode-typescript-next",
+        "vue.volar"
     ]
 }

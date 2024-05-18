@@ -1,5 +1,5 @@
 {
-  "name": "vue-templete-unocss",
+  "name": "vue-templete",
   "private": false,
   "version": "1.0.0",
   "type": "module",
@@ -15,11 +15,9 @@
     "vue-router": "^4.3.2"
   },
   "devDependencies": {
-    "@iconify-json/skill-icons": "^1.1.8",
     "@types/node": "^20.12.7",
     "@vitejs/plugin-vue": "^5.0.4",
     "typescript": "^5.2.2",
-    "unocss": "^0.59.4",
     "vite": "^5.2.0",
     "vue-tsc": "^2.0.6"
   }
