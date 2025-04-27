@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>优惠套餐 - 笔笔生风AI写作</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#FF6B6B",
+              secondary: "#4A90E2",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "2px",
+              DEFAULT: "4px",
+              md: "8px",
+              lg: "12px",
+              xl: "16px",
+              "2xl": "20px",
+              "3xl": "24px",
+              full: "9999px",
+              button: "4px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: 1024px;
+      }
+      .menu-item:hover {
+        background-color: rgba(74, 144, 226, 0.1);
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <div class="flex w-[1440px] mx-auto">
+      <nav class="w-[260px] h-screen bg-white shadow-lg fixed">
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-2">
+            <span class="text-[23px] font-['Pacifico'] text-primary">logo</span>
+            <h1 class="text-[23px] font-bold text-primary">笔笔生风AI写作</h1>
+          </div>
+        </div>
+        <div class="py-4">
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary hover:bg-gray-50"
+          >
+            <i class="fas fa-file-alt w-6 h-6 mr-3"></i>
+            <span>我的论文</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary hover:bg-gray-50"
+          >
+            <i class="fas fa-pen-fancy w-6 h-6 mr-3"></i>
+            <span>论文生成</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-primary hover:bg-gray-50"
+          >
+            <i class="fas fa-search w-6 h-6 mr-3"></i>
+            <span>论文查重</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-primary hover:bg-gray-50"
+          >
+            <i class="fas fa-robot w-6 h-6 mr-3"></i>
+            <span>AIGC查重</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary hover:bg-gray-50"
+          >
+            <i class="fas fa-edit w-6 h-6 mr-3"></i>
+            <span>人工降重</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary hover:bg-gray-50"
+          >
+            <i class="fas fa-magic w-6 h-6 mr-3"></i>
+            <span>人工降AIGC</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary hover:bg-gray-50"
+          >
+            <i class="fas fa-pencil-alt w-6 h-6 mr-3"></i>
+            <span>人工写作</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary bg-blue-50"
+          >
+            <i class="fas fa-gift w-6 h-6 mr-3"></i>
+            <span>优惠套餐</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary hover:bg-gray-50"
+          >
+            <i class="fas fa-user w-6 h-6 mr-3"></i>
+            <span>我的账户</span>
+          </div>
+          <div
+            class="menu-item flex items-center px-6 py-3 text-[18px] text-secondary hover:bg-gray-50"
+          >
+            <i class="fas fa-handshake w-6 h-6 mr-3"></i>
+            <span>商务合作</span>
+          </div>
+        </div>
+      </nav>
+
+      <main class="ml-[260px] flex-1 p-8">
+        <div class="max-w-[1100px] mx-auto">
+          <h2 class="text-2xl font-bold mb-6">优惠套餐</h2>
+          <p class="text-gray-600 mb-8">选择最适合您的套餐，开启智能写作之旅</p>
+
+          <div class="grid grid-cols-3 gap-8">
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="showModal('qr1')"
+            >
+              <div class="text-center">
+                <div class="text-4xl font-bold text-primary mb-4">¥ 118</div>
+                <div class="text-xl font-semibold mb-6">2 篇套餐</div>
+                <div class="text-gray-600 mb-6">
+                  <p class="mb-2">✓ 2次完整论文生成</p>
+                  <p class="mb-2">✓ 支持查重/降重</p>
+                  <p class="mb-2">✓ 24小时客服支持</p>
+                  <p>✓ 有效期30天</p>
+                </div>
+                <button
+                  class="bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 whitespace-nowrap"
+                >
+                  立即购买
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer transform scale-105"
+              onclick="showModal('qr2')"
+            >
+              <div class="absolute -top-3 right-4">
+                <span
+                  class="bg-primary text-white px-4 py-1 rounded-full text-sm"
+                  >最受欢迎</span
+                >
+              </div>
+              <div class="text-center">
+                <div class="text-4xl font-bold text-primary mb-4">¥ 198</div>
+                <div class="text-xl font-semibold mb-6">5 篇套餐</div>
+                <div class="text-gray-600 mb-6">
+                  <p class="mb-2">✓ 5次完整论文生成</p>
+                  <p class="mb-2">✓ 支持查重/降重</p>
+                  <p class="mb-2">✓ 24小时客服支持</p>
+                  <p class="mb-2">✓ 有效期60天</p>
+                  <p>✓ 赠送1次人工修改</p>
+                </div>
+                <button
+                  class="bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 whitespace-nowrap"
+                >
+                  立即购买
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              onclick="showModal('qr3')"
+            >
+              <div class="text-center">
+                <div class="text-4xl font-bold text-primary mb-4">¥ 298</div>
+                <div class="text-xl font-semibold mb-6">10 篇套餐</div>
+                <div class="text-gray-600 mb-6">
+                  <p class="mb-2">✓ 10次完整论文生成</p>
+                  <p class="mb-2">✓ 支持查重/降重</p>
+                  <p class="mb-2">✓ 24小时客服支持</p>
+                  <p class="mb-2">✓ 有效期90天</p>
+                  <p class="mb-2">✓ 赠送2次人工修改</p>
+                  <p>✓ 专属客服服务</p>
+                </div>
+                <button
+                  class="bg-primary text-white px-8 py-3 rounded-button hover:bg-opacity-90 whitespace-nowrap"
+                >
+                  立即购买
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="fixed inset-0 flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-xl relative">
+          <button
+            onclick="hideModal()"
+            class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+          <h3 class="text-xl font-bold mb-4">请扫码支付</h3>
+          <div
+            class="w-64 h-64 bg-gray-200 rounded-lg flex items-center justify-center"
+          >
+            <i class="fas fa-qrcode text-6xl text-gray-400"></i>
+          </div>
+          <p class="text-gray-600 mt-4 text-center">支付完成后将自动跳转</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showModal(qrCode) {
+        document.getElementById("modal").style.display = "block";
+      }
+
+      function hideModal() {
+        document.getElementById("modal").style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("modal")) {
+          hideModal();
+        }
+      };
+    </script>
+  </body>
+</html>

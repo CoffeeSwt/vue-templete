@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>题目推荐</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3B82F6",
+              secondary: "#64748B",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "2px",
+              DEFAULT: "4px",
+              md: "8px",
+              lg: "12px",
+              xl: "16px",
+              "2xl": "20px",
+              "3xl": "24px",
+              full: "9999px",
+              button: "4px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        min-height: 1024px;
+      }
+      .modal-backdrop {
+        background: rgba(0, 0, 0, 0.5);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+      <button
+        id="openModal"
+        class="bg-primary text-white px-6 py-3 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap"
+      >
+        推荐题目
+      </button>
+    </div>
+
+    <div id="inputModal" class="modal-backdrop">
+      <div class="modal bg-white !rounded-lg shadow-xl w-[800px]">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">题目推荐</h2>
+            <button
+              id="closeInputModal"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="mb-6">
+            <textarea
+              id="inputText"
+              class="w-full h-[300px] border border-gray-300 !rounded-lg p-4 resize-none focus:outline-none focus:ring-2 focus:ring-primary"
+              placeholder="请输入专业、研究方向、关键词等信息（500字以内）"
+            ></textarea>
+            <div class="flex justify-end mt-2">
+              <span id="charCount" class="text-gray-500 text-sm">0/500</span>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <button
+              id="submitBtn"
+              class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-blue-600 transition-colors whitespace-nowrap w-4/5"
+            >
+              提交
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="resultModal" class="modal-backdrop">
+      <div
+        class="modal bg-white !rounded-lg shadow-xl w-[800px] max-h-[80vh] overflow-y-auto"
+      >
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-6">
+            <h2 class="text-2xl font-bold">推荐题目列表</h2>
+            <button
+              id="closeResultModal"
+              class="text-gray-500 hover:text-gray-700"
+            >
+              <i class="fas fa-times text-xl"></i>
+            </button>
+          </div>
+          <div class="space-y-4">
+            <div
+              class="flex items-start justify-between p-4 bg-gray-50 !rounded-lg hover:bg-gray-100"
+            >
+              <div class="flex-1">
+                <h3 class="font-medium mb-2">
+                  基于深度学习的智慧城市交通流量预测研究
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >深度学习</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >智慧城市</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >交通预测</span
+                  >
+                </div>
+              </div>
+              <button
+                class="ml-4 bg-primary text-white w-10 h-10 !rounded-full flex items-center justify-center hover:bg-blue-600"
+              >
+                <i class="fas fa-check"></i>
+              </button>
+            </div>
+            <div
+              class="flex items-start justify-between p-4 bg-gray-50 !rounded-lg hover:bg-gray-100"
+            >
+              <div class="flex-1">
+                <h3 class="font-medium mb-2">
+                  基于区块链的供应链金融风险管理系统设计与实现
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >区块链</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >供应链金融</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >风险管理</span
+                  >
+                </div>
+              </div>
+              <button
+                class="ml-4 bg-primary text-white w-10 h-10 !rounded-full flex items-center justify-center hover:bg-blue-600"
+              >
+                <i class="fas fa-check"></i>
+              </button>
+            </div>
+            <div
+              class="flex items-start justify-between p-4 bg-gray-50 !rounded-lg hover:bg-gray-100"
+            >
+              <div class="flex-1">
+                <h3 class="font-medium mb-2">
+                  面向工业物联网的边缘计算安全架构研究
+                </h3>
+                <div class="flex flex-wrap gap-2">
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >工业物联网</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >边缘计算</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-700 px-2 py-1 !rounded-full text-sm"
+                    >网络安全</span
+                  >
+                </div>
+              </div>
+              <button
+                class="ml-4 bg-primary text-white w-10 h-10 !rounded-full flex items-center justify-center hover:bg-blue-600"
+              >
+                <i class="fas fa-check"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const openModal = document.getElementById("openModal");
+      const inputModal = document.getElementById("inputModal");
+      const resultModal = document.getElementById("resultModal");
+      const closeInputModal = document.getElementById("closeInputModal");
+      const closeResultModal = document.getElementById("closeResultModal");
+      const submitBtn = document.getElementById("submitBtn");
+      const inputText = document.getElementById("inputText");
+      const charCount = document.getElementById("charCount");
+
+      openModal.addEventListener("click", () => {
+        inputModal.style.display = "block";
+      });
+
+      closeInputModal.addEventListener("click", () => {
+        inputModal.style.display = "none";
+      });
+
+      closeResultModal.addEventListener("click", () => {
+        resultModal.style.display = "none";
+      });
+
+      submitBtn.addEventListener("click", () => {
+        if (inputText.value.trim() === "") {
+          alert("请输入内容");
+          return;
+        }
+        inputModal.style.display = "none";
+        resultModal.style.display = "block";
+      });
+
+      inputText.addEventListener("input", () => {
+        const length = inputText.value.length;
+        charCount.textContent = `${length}/500`;
+
+        if (length > 500) {
+          charCount.classList.add("text-red-500");
+          submitBtn.disabled = true;
+        } else {
+          charCount.classList.remove("text-red-500");
+          submitBtn.disabled = false;
+        }
+      });
+
+      window.onclick = (event) => {
+        if (event.target === inputModal) {
+          inputModal.style.display = "none";
+        }
+        if (event.target === resultModal) {
+          resultModal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
+</html>

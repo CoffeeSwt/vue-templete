@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>笔笔生风AI写作</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3B82F6",
+              secondary: "#EF4444",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "2px",
+              DEFAULT: "4px",
+              md: "8px",
+              lg: "12px",
+              xl: "16px",
+              "2xl": "20px",
+              "3xl": "24px",
+              full: "9999px",
+              button: "4px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="min-h-[1024px]">
+    <div class="w-[1440px] mx-auto">
+      <header class="h-[80px] flex items-center justify-between px-8 border-b">
+        <div class="flex items-center gap-4">
+          <div class="font-['Pacifico'] text-[23px] text-secondary">logo</div>
+          <span class="text-[23px] text-secondary">笔笔生风AI写作</span>
+        </div>
+        <nav class="flex items-center gap-8">
+          <a
+            href="/login"
+            class="text-[18px] text-primary hover:text-primary/80 flex items-center gap-2"
+          >
+            <i class="fas fa-pen-fancy text-xl"></i>
+            论文生成
+          </a>
+          <a
+            href="http://www.papernew.net"
+            class="text-[18px] text-primary hover:text-primary/80 flex items-center gap-2"
+          >
+            <i class="fas fa-search text-xl"></i>
+            论文查重
+          </a>
+          <a
+            href="http://www.papernew.net"
+            class="text-[18px] text-primary hover:text-primary/80 flex items-center gap-2"
+          >
+            <i class="fas fa-robot text-xl"></i>
+            AIGC查重
+          </a>
+          <a
+            href="#"
+            class="text-[18px] text-primary hover:text-primary/80 flex items-center gap-2"
+          >
+            <i class="fas fa-info-circle text-xl"></i>
+            关于我们
+          </a>
+          <a
+            href="#"
+            class="text-[18px] text-primary hover:text-primary/80 flex items-center gap-2"
+          >
+            <i class="fas fa-handshake text-xl"></i>
+            商务合作
+          </a>
+          <button
+            onclick="showQRCode()"
+            class="text-[18px] text-primary hover:text-primary/80 flex items-center gap-2"
+          >
+            <i class="fas fa-user-edit text-xl"></i>
+            人工降重
+          </button>
+          <button
+            onclick="showQRCode()"
+            class="text-[18px] text-primary hover:text-primary/80 flex items-center gap-2"
+          >
+            <i class="fas fa-magic text-xl"></i>
+            人工降AIGC
+          </button>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a
+            href="/login"
+            class="px-6 py-2 border border-primary text-primary hover:bg-primary hover:text-white transition-colors !rounded-button whitespace-nowrap"
+            >登录</a
+          >
+          <a
+            href="/register"
+            class="px-6 py-2 bg-primary text-white hover:bg-primary/90 transition-colors !rounded-button whitespace-nowrap"
+            >注册</a
+          >
+        </div>
+      </header>
+      <main class="py-16 px-8">
+        <div class="grid grid-cols-2 gap-8">
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="https://ai-public.mastergo.com/ai/img_res/4ff048d18c98d98ac5004e4b65c44088.jpg"
+              class="w-full h-[300px] object-cover"
+              alt="低AIGC痕迹"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">低 AIGC 痕迹生成</h3>
+              <p class="text-gray-600">
+                采用先进的AI技术，生成自然流畅的文本内容，有效降低 AIGC
+                特征，让文章更具原创性和真实感。
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="https://ai-public.mastergo.com/ai/img_res/8fde6d95d8b231b25de99ea96f87bfd6.jpg"
+              class="w-full h-[300px] object-cover"
+              alt="高通顺度"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">高通顺度论文</h3>
+              <p class="text-gray-600">
+                智能优化句式结构，确保文章逻辑通顺，表达准确，符合学术写作规范。
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="https://ai-public.mastergo.com/ai/img_res/453bf95d2399b64f5dddfd5b685dcb75.jpg"
+              class="w-full h-[300px] object-cover"
+              alt="代码公式"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">代码公式表格生成</h3>
+              <p class="text-gray-600">
+                支持多种编程语言代码生成，数学公式编辑，以及专业表格制作，满足多样化学术需求。
+              </p>
+            </div>
+          </div>
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <img
+              src="https://ai-public.mastergo.com/ai/img_res/dc892f32d00b300bdec7b4e119a58748.jpg"
+              class="w-full h-[300px] object-cover"
+              alt="调研表格"
+            />
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">可建模可生成调研表格</h3>
+              <p class="text-gray-600">
+                提供专业的调研问卷模板，支持自定义表格设计，快速生成规范的调研数据统计表。
+              </p>
+            </div>
+          </div>
+        </div>
+        <section class="px-8 pb-16">
+          <h2 class="text-2xl font-bold mb-8">最新文章</h2>
+          <div class="grid grid-cols-5 gap-6 mb-6">
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                人工智能在现代教育中的应用与发展趋势分析
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                本文深入探讨了人工智能技术在教育领域的具体应用场景，包括智能辅导系统、个性化学习方案制定等方面，并对未来发展趋势进行了详细分析。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">张雨轩 教授</span>
+                <span class="text-gray-400 text-sm">2024-01-15</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                区块链技术在供应链管理中的创新应用研究
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                研究探讨了区块链技术如何优化供应链管理流程，提高透明度和可追溯性，并通过实际案例分析验证了其在提升供应链效率方面的积极作用。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">李思远 博士</span>
+                <span class="text-gray-400 text-sm">2024-01-14</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                城市绿色建筑发展策略与环境影响评估
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                文章分析了绿色建筑在现代城市发展中的重要性，探讨了其对环境的积极影响，并提出了促进绿色建筑发展的具体策略建议。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">王梓萱 研究员</span>
+                <span class="text-gray-400 text-sm">2024-01-13</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                量子计算在密码学领域的应用前景研究
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                深入探讨了量子计算技术对现有密码体系的潜在影响，分析了后量子密码学的发展方向，并提出了相应的安全策略建议。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">陈宇轩 教授</span>
+                <span class="text-gray-400 text-sm">2024-01-12</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                新能源汽车动力电池回收利用技术研究
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                研究分析了电动汽车废旧动力电池的回收技术现状，探讨了其再利用的可行性方案，为实现资源循环利用提供了理论支持。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">刘雨桐 工程师</span>
+                <span class="text-gray-400 text-sm">2024-01-11</span>
+              </div>
+            </div>
+          </div>
+          <div class="grid grid-cols-5 gap-6">
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                5G 技术在智慧医疗领域的应用研究
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                探讨了5G技术在远程诊疗、智能监护等医疗场景中的具体应用，分析了其对提升医疗服务质量和效率的重要作用。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">周晓峰 主任</span>
+                <span class="text-gray-400 text-sm">2024-01-10</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                基于深度学习的自然语言处理技术研究
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                文章深入研究了深度学习在自然语言处理领域的最新进展，重点分析了transformer架构的创新应用。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">吴云飞 研究员</span>
+                <span class="text-gray-400 text-sm">2024-01-09</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                智慧城市物联网架构设计与实现
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                研究提出了一种新型智慧城市物联网架构，详细阐述了其设计理念和实现方法，并通过实际案例验证了其可行性。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">林思琪 工程师</span>
+                <span class="text-gray-400 text-sm">2024-01-08</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                数字金融风险防控体系构建研究
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                探讨了数字金融发展中的风险问题，提出了完善的风险防控体系构建方案，为金融科技健康发展提供了理论支撑。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">赵明宇 教授</span>
+                <span class="text-gray-400 text-sm">2024-01-07</span>
+              </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm p-4">
+              <h3 class="text-lg font-medium mb-2 line-clamp-2">
+                工业互联网平台安全防护策略研究
+              </h3>
+              <p class="text-gray-600 text-sm line-clamp-3">
+                分析了工业互联网平台面临的安全威胁，提出了全方位的安全防护策略，并结合实际案例进行了验证。
+              </p>
+              <div class="mt-4 flex items-center justify-between">
+                <span class="text-gray-500 text-sm">孙浩然 专家</span>
+                <span class="text-gray-400 text-sm">2024-01-06</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div
+      id="qrcodeModal"
+      class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+    >
+      <div class="bg-white p-8 rounded-lg relative">
+        <button
+          onclick="hideQRCode()"
+          class="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <h3 class="text-xl font-bold mb-4">扫码联系客服</h3>
+        <div
+          class="w-[200px] h-[200px] bg-gray-200 flex items-center justify-center"
+        >
+          <i class="fas fa-qrcode text-6xl text-gray-400"></i>
+        </div>
+        <p class="mt-4 text-gray-600 text-center">请扫描二维码添加客服微信</p>
+      </div>
+    </div>
+    <script>
+      function showQRCode() {
+        document.getElementById("qrcodeModal").classList.remove("hidden");
+      }
+      function hideQRCode() {
+        document.getElementById("qrcodeModal").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
