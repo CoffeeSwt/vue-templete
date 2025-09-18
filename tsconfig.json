@@ -5,7 +5,7 @@
     ],
     "target": "esnext",
     "useDefineForClassFields": true,
-    "module": "esnext",
+    "module": "node16",
     "lib": [
       "esnext",
       "DOM",
@@ -19,7 +19,7 @@
       ]
     },
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "node16",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
